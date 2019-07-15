@@ -1,26 +1,19 @@
 <template>
     <div class="container">
-        <img style="" src="../../assets/images/welcome.jpg">
+        <img src="../../assets/images/welcome.jpg" alt="">
     </div>
 </template>
 
 <script>
 export default {
-
+  created () {
+    // this.$http.get('http://ttapi.research.itcast.cn/mp/v1_0/articles').then(res => console.log(res.data))
+  }
 }
 </script>
 
 <style scope lang="less">
-    // .container {
-
-    //     position: absolute;
-    //     width: 100%;
-    //     height: 100%;
-    //     top: 0px;
-    //     left: 0px;
-    //     // background: red;
-    //     // cover 后面容器 多余的裁剪      contain在容器内容完全显示图片
-    //     // 背景定位   /    背景图片
-    //     background: url(../../assets/images/welcome.jpg)no-repeat center ;
-    // }
+.container {
+    text-align: center;
+}
 </style>

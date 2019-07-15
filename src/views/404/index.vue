@@ -10,13 +10,13 @@ export default {
 }
 </script>
 
-<style>
+<style scope lang="less">
 .Notcontainer {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(../../assets/images/404.png)no-rep eat center / cover;
+  background: url(../../assets/images/404.png)no-repeat center / cover;
 }
 </style>
