@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import Login from '@/views/login'
 import Home from '@/views/home'
 import Welcome from '@/views/welcome'
-// import Welcome from '../views/welcome'
+import Article from '@/views/article'
 import NotFound from '@/views/404'
 
 Vue.use(VueRouter)
@@ -16,7 +16,8 @@ const router = new VueRouter({
       path: '/',
       component: Home,
       children: [
-        { name: 'welcome', path: '/', component: Welcome }
+        { name: 'welcome', path: '/', component: Welcome },
+        { name: 'article', path: '/article', component: Article }
       ]
     },
     // 很多规则
