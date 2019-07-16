@@ -49,12 +49,24 @@
       </el-form>
     </el-card>
     <!-- 结果区域 -->
-    <el-card></el-card>
+    <el-card>
+      <my-test>
+        <!-- scope 搜集了该插槽上所有的自定义属性的数据-->
+        <!-- scope 是一个对象， 包含了插槽上的所有数据-->
+        <!-- <template slot="content" slot-scope="scope">内容1 {{scope.test}}</template> -->
+        <template v-slot:content="scope">内容1 {{scope.test}}</template>
+        <template slot="footer">底部1</template>
+      </my-test>
+    </el-card>
   </div>
 </template>
 
 <script>
+// 导入my-test
+import MyTest from '@/components/my-test.vue'
 export default {
+  // 注册
+  components: { MyTest },
   // 请求参数
   data () {
     return {

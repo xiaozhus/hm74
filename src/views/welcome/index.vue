@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="welcome-container">
         <img src="../../assets/images/welcome.jpg" alt="">
     </div>
 </template>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style scope lang="less">
-.container {
+.welcome-container {
     text-align: center;
 }
 </style>
