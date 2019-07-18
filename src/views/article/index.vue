@@ -1,5 +1,6 @@
 <template>
   <div class="article-container">
+
     <!-- 筛选区域 -->
     <el-card>
       <!-- 面包屑 -->
@@ -20,14 +21,7 @@
         </el-form-item>
 
         <el-form-item label="频道:">
-          <el-select v-model="reqParams.channel_id" placeholder="所有频道">
-            <el-option
-              v-for="item in channelOptions"
-              :key="item.id"
-              :label="item.name"
-              :value="item.id"
-            ></el-option>
-          </el-select>
+          <my-channel v-model="reqParams.channel_id"></my-channel>
         </el-form-item>
 
         <!-- 时间 -->
@@ -108,6 +102,7 @@
 </template>
 
 <script>
+// import { constants } from 'crypto'
 // import { async } from 'q'
 // 导入my-test
 // import MyBread from '@/components/my-bread.vue'
@@ -130,8 +125,7 @@ export default {
         begin_pubdate: null,
         end_pubdate: null
       },
-      // 频道的选项数组
-      channelOptions: [{ name: 'java', id: 1 }],
+
       // 日期数据
       dateValues: [],
 
@@ -142,8 +136,6 @@ export default {
     }
   },
   created () {
-    // 获取频道数据
-    this.getChannelOptions()
     // 获取文章列表数据
     this.getArticles()
   },
@@ -192,15 +184,6 @@ export default {
       this.getArticles()
     },
     // 获取频道数据
-    async getChannelOptions () {
-      // res ===> {data:相应内容} ===> {data:{data:{channels:[{id, name}]}}}
-      // 解构赋值  const {data} =res
-      // 解构赋值  const {data:{data}} = res
-      const {
-        data: { data }
-      } = await this.$http.get('channels')
-      this.channelOptions = data.channels
-    },
 
     // 获取文章列表数据
     async getArticles () {
