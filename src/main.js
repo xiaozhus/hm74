@@ -8,12 +8,18 @@ import 'element-ui/lib/theme-chalk/index.css'
 import router from '@/router/index'
 // 导入components插件
 import components from '@/components'
+
 // 导入axios
 import axios from '@/api/axios'
+
+// 导入全局样式
+import '@/style/index.less'
+
+// 使用components插件
+Vue.use(components)
+
 Vue.prototype.$http = axios
 
-Vue.use(components)
-// 使用components插件
 Vue.use(ELEMENT)
 
 Vue.config.productionTip = false
