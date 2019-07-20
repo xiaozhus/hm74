@@ -25,3 +25,9 @@
   height: 178px;
   display: block;
 }
+.image-container .el-dialog__footer {
+  text-align: center;
+}
+.image-container.el-dialog__body {
+  padding-bottom: 0;
+}
